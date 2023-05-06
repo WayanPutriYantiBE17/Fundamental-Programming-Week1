@@ -3,19 +3,12 @@ package main
 import "fmt"
 
 func RemoveDuplicates(array []int) int {
-	// your code here
-	unik := make(map[int]bool)
-	for _,item := range array {
-		unik[item]=true
+	arr := make(map[int]bool)
+	for _, value := range array{
+		arr[value]=true
 	}
 
-	hasil :=make([]int,0,len(unik))
-	for item :=range unik{
-		hasil = append(hasil,item)
-	}
-	
-	
-	return len(hasil)
+	return len(arr)
 }
 
 func main() {
