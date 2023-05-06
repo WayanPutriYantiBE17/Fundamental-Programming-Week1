@@ -4,19 +4,17 @@ import "fmt"
 
 func ArrayUnique(arrayA, arrayB []int) []int {
 	// your code here
-	unik := make(map[int]bool)
-	hasil := []int{}
-	for _, item := range arrayA{
-		unik[item]=true
-	}
-	for _,item := range arrayB{
-		if _,ok := unik[item]; ok{
-			delete(unik,item)
-		}
-	}
 
-	for item := range unik{
-		hasil = append(hasil,item)
+	hasil := []int{}
+	for i := 0; i <len(arrayA);i++ {
+		for j := 0; j<len(arrayB); j++ {
+			if arrayA[i] == arrayB[j]{
+				break
+			}
+			if j == len(arrayB)-1 {
+				hasil = append(hasil,arrayA[i])
+			}
+		}
 	}
 	return hasil
 }
